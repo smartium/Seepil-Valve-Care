@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "valve-care-platform",
+  "private_key_id": "76291d6be819e3cbeefe8dda25d461e8448076e1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCh8nRE+s4PzaWc\nytmOeqSlVsRK26/I2F1ZIHhtgym5ClqzmVcV81icbo1xkPH1bi6UNf0oa9w77M4A\n7eeNt4ECmXUR1NYM0PlmsQHLamh3nAOaucTQM+528I443LevCUfSxAz+O6WZudyL\nUHeHSR1nPws5Svo2YQFuA7cj+cAiYakhccuaBeRJhUcbIAHzHp4Z/Dbt1MDfPzai\nV6tt7DYVjq58qlhvP+kODSYKehk4OAKZZPbPC/XOZTUVzEmq7q2BDpm7bOXp+u3B\nY1IsJf/dg+x+13dsZXgx7VLE1GE2gvwB+lSR/j+NS2SC7z1S2hN//4X0R6lqTLhU\nujQIj3HBAgMBAAECggEAB3ZIQLhsv8IqSCH5qczBYuPvWgKq5B6CGJ38JpGlXcMa\nIE3nuxlyIw0eA9ZZq8UmrMobDt5/cJxt9pF/uqIytdez0v1DWqZTY5Wy3zhZNW+x\nI9M8/Bn0ejMF3p1e8lgDYPULIzjE3eM4RAwSYd+u1OfNANgRVOmd2v+dU/FJVtwl\n04V3Sfv/7Wop+idWbAYKS4Hi0t7rbRvevXYbB6cT4VD2ffNqMoMLhPeNKMJkKXQD\nYVdlvnfqFpvbBrdrlSs0vj8VTEi7jvA8JsrhpECyLOoW4S4Ja+hH5S8D8jZCYK9k\nY3rlX/M1Oo6YO34Iu3j8uvc8mWezixgnNja9k5iVkQKBgQDaNk1Mk2dcFXskbQKn\nxoCqYAojd67G70uKLLIgauL7zTvMFo5xKJAjJKfMxFhjTXBkzqHsAZAUFbCkH+SK\n/+evArNjlKEU1HeOwrNJunRB3+uYngNA6AYTTQqhcoUDtata9zzxaEwZsdpFeT2I\nBxjZ0h58fZr6GINy9aJk4RGSGQKBgQC9/dT4z0dpanqOfL+wvdcVsixfkWIJHBLM\nikKXAcFbT7vUx0/LZCr4VKxGETTa9LRtzOZtub0yPByYX058+x2NQlQ2vCriYocd\nYGNm2eWWmmghEza2kyYU4/XniYYPEdlBNuIxLgMthzC1vVpJL4xkpJ7CJ9RM6apj\nCGoUg6Zh6QKBgFQ9KlIphXlTAZrqSmAijYE4WjGe/mXl8y+AWbOSD9ZNQIxlGNAu\nbJZkjDLMiaKsPntsGa5WXByk0vBJL51JdVNmo4IJ2rWD4DPIjhYkWMUlgHoGZhMk\nf1PsJfJ1l0v7Ug9n6qr3LImu0yiGyW497yYHq6U7iByMYhJ7KRnwmSvhAoGALz9y\nuTWDAtoyBEFNwnxTgte+ZT3YbX+HxUoU6UzMcxLPGUk/tMsCTKNx/DLHPDRisnOk\nUmFAhb+hNNtuv3ILlVeLbdk5qPbrtwiDb858ZAmeH6uRjbHmZIeUXbI7nn/H0Yn+\nklBpBed625dtXonulhDCUnJpP39UmjA7gUKEHBECgYBF2pBhioDIs/9ZHL4XiWG0\nv6hSG5nTagXF5ILvFWn/kN/QWVOtnH1POVwpdOsmocBn21U6kgxP8OC15aGDi0fD\nX+aDmHG7bTGpaxSS2VGK/Lo/4yxta105kF63V1FzfZVIuyH2DSrjAszeT3sAfFvY\nDwYwHIfIpQnnpcM/wegFHg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "documents-storage@valve-care-platform.iam.gserviceaccount.com",
+  "client_id": "110524140815234693404",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/documents-storage%40valve-care-platform.iam.gserviceaccount.com"
+}

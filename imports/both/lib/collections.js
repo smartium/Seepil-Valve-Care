@@ -11,6 +11,7 @@ ValvesIndex = new Index({
   collection: Valves,
   fields: ['model', 'brand'],
   engine: new MinimongoEngine(),
+  defaultSearchOptions: { limit: 20 }
 })
 
 ClientsValvesIndex = new Index({

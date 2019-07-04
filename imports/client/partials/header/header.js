@@ -26,6 +26,14 @@ Template.header.helpers({
 
   adminMenu() {
     return FlowRouter.getRouteName() == 'Admin' ? true : false;
+  },
+
+  userMenu() {
+    return FlowRouter.getRouteName() == 'Home' ? true : false;
+  },
+
+  clientMenu() {
+    return FlowRouter.getRouteName() == 'Client' ? true : false;
   }
 });
 

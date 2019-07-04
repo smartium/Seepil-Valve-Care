@@ -1,0 +1,52 @@
+<template name="manufacturers">
+  <div class="container">
+    <h4>Valves Manufacturers</h4>
+    <table>
+      <tbody>
+        {{#each brands}}
+        <tr>
+          <td>{{name}}</td>
+          <td>
+            {{#if site}}
+            <a href="{{site}}"><i class="material-icons">public</i></a>
+            {{/if}}
+          </td>
+          <td><a href="#"><i class="material-icons">edit</i></a></td>
+          <td><a href="#"><i class="material-icons red-text">delete</i></a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Modal Trigger -->
+  <a class="btn-floating btn-large waves-effect waves-light red modal-trigger btn-edge" href="#modal1">
+    <i class="material-icons">add</i>
+  </a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>New Manufacturer</h4>
+      <form id="manufacturersForm">
+        <div class="row">
+          <div class="input-field col s12 l6">
+            <input id="name" type="text" class="validate">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s12 l6">
+            <input id="site" type="text" class="validate">
+            <label for="site">Site</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn waves-effect waves-light blue" type="submit" name="action">Save
+            <i class="material-icons right">save</i>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</template>

@@ -1,0 +1,33 @@
+<template name="client">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h4>{{clientData.profile.name}}</h4>
+        <h5>Valves</h5>
+      </div>
+    </div>
+    <div class="row">
+      {{#each valves}}
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{tag}}<i class="material-icons right">more_vert</i></span>
+          <span class="new badge blue" data-badge-caption="certificates">{{valveCertificates _id}}</span>
+          <p>Serial number: {{serial}}</p>
+          {{#with getValve valve}}
+          <p>Model: {{model}}</p>
+          <p>Manufacturer: {{brand}}</p>
+          {{/with}}
+          {{#with getSite site}}
+          <p>Site: {{name}}</p>
+          {{/with}}
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{#with getValve valve}}{{model}}{{/with}}<i class="material-icons right">close</i></span>
+          <p>Valve.</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
