@@ -1,0 +1,28 @@
+<template name="clientValveCertificates">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <br>
+        <a href="/">Back to Home...</a>
+        <h4> <small>Valve</small> <span class="blue-text">{{valve.tag}}</span> <small>certificates</small></h4>
+      </div>
+    </div>
+    <div class="row">
+      {{#each certificates}}
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">{{number}}</span>
+            <p>
+              Date: {{date}}
+            </p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="blue-text">View document</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </template>
