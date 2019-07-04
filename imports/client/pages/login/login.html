@@ -1,6 +1,7 @@
 <template name="login">
   <div class="container">
     <div class="row">
+        {{> loginButtons}}
       <form class="col s12" id="loginForm">
         <div class="row">
           <div class="input-field col s6">
@@ -10,7 +11,7 @@
           </div>
           <div class="input-field col s6">
             <i class="material-icons prefix">fiber_pin</i>
-            <input id="password" type="password" class="validate" value="121212">
+            <input id="password" type="password" class="validate" value="1234">
             <label for="password">Password</label>
           </div>
         </div>
@@ -24,4 +25,6 @@
       </form>
     </div>
   </div>
+
+
 </template>

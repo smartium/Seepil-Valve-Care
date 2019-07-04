@@ -16,13 +16,33 @@
             <p>
               Date: {{date}}
             </p>
-            </div>
-            <div class="card-action">
-              <a href="#" class="blue-text">View document</a>
-            </div>
+          </div>
+          <div class="card-action">
+            <a href="https://storage.cloud.google.com/valvecare-uploads/{{getDocument document}}" class="blue-text" target="_blank">
+              View Document
+            </a>
           </div>
         </div>
-      {{/each}}
       </div>
+      {{/each}}
     </div>
-  </template>
+  </div>
+
+  <!-- Modal Trigger -->
+  <a class="btn-floating btn-large waves-effect waves-light red modal-trigger btn-edge" href="#modal1">
+    <i class="material-icons">add</i>
+  </a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>New certificate</h4>
+      <form id="new-client-valve">
+        {{> uploadForm}}
+        <input type="text" class="form-control" id="certName" placeholder="Number and/or Description">
+        <input class="datepicker" type="text" id="certDate">
+        <button type="submit" class="btn btn-primary mb-0">Add</button>
+      </form>
+    </div>
+  </div>
+</template>

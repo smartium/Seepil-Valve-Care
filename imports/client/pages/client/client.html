@@ -12,7 +12,7 @@
       <div class="card">
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{tag}}<i class="material-icons right">more_vert</i></span>
-          <span class="new badge blue" data-badge-caption="certificates">{{valveCertificates _id}}</span>
+          <a href="/valve/certificates/{{_id}}"><span class="new badge blue" data-badge-caption="certificates">{{valveCertificates _id}}</span></a>
           <p>Serial number: {{serial}}</p>
           {{#with getValve valve}}
           <p>Model: {{model}}</p>
