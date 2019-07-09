@@ -1,7 +1,17 @@
 import './header.html';
 
+userDrop = new ReactiveVar(false);
+
 Meteor.startup(()=>{
-  $(".user-dropdown").dropdown();
+  Tracker.autorun(()=> {
+    if (Meteor.userId()) {
+      console.log('dropdown');
+      userDrop.set(true);
+      Meteor.setTimeout(()=> {
+        // $(".user-dropdown").dropdown();
+      }, 1000);
+    }
+  });
 });
 
 Template.header.onRendered(()=> {
@@ -11,7 +21,8 @@ Template.header.onRendered(()=> {
 
 Template.header.helpers({
   logged() {
-    return Meteor.userId();
+    // return Meteor.userId();
+    return userDrop.get();
   },
 
   userEmail() {
@@ -40,7 +51,7 @@ Template.header.helpers({
 Template.header.events({
   'click #logout'(e) {
     e.preventDefault();
+    userDrop.set(false);
     Meteor.logout();
-    alert('out')
   }
 });

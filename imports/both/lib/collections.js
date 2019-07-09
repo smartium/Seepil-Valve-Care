@@ -9,7 +9,7 @@ Certificates = new Mongo.Collection('certificates');
 
 ValvesIndex = new Index({
   collection: Valves,
-  fields: ['model', 'brand'],
+  fields: ['model', 'manufacturer'],
   engine: new MinimongoEngine(),
   defaultSearchOptions: { limit: 20 }
 })

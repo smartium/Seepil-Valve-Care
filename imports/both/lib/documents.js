@@ -23,7 +23,7 @@ else {
   storagePath = '/var/www/valvecare/bundle/programs/server';
 }
 
-const Documents = new FilesCollection({
+Documents = new FilesCollection({
   debug: false, // Set to true to enable debugging messages
   storagePath: storagePath,
   collectionName: 'documents',

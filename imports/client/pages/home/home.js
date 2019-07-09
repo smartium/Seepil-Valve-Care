@@ -1,5 +1,13 @@
 import './home.html';
 
+Template.home.onRendered(()=> {
+  Meteor.setTimeout(()=>{
+    if (!Meteor.user()) {
+      FlowRouter.go('/login');
+    }
+  },2000);
+});
+
 Template.home.helpers({
   valves() {
     return ClientsValves.find();

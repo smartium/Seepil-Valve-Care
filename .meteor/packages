@@ -20,11 +20,13 @@ shell-server@0.4.0            # Server-side component of the `meteor shell` comm
 #autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
 fourseven:scss
 underscore
 random
 kadira:flow-router
 kadira:blaze-layout
+mcissel:flow-transition
 easy:search
 easysearch:autosuggest
 
@@ -32,11 +34,20 @@ sewdn:masked-input
 momentjs:moment
 
 session@1.2.0
+#accounts-base
 accounts-password@1.5.1
+#useraccounts:unstyled
 accounts-ui
+alanning:roles
+
 ostrio:files
+
 #aldeed:simple-schema
 #aldeed:collection2@3.0.0
 #alethes:pages
 kurounin:pagination
 kurounin:pagination-blaze
+
+msavin:mongol
+themeteorchef:bert
+fortawesome:fontawesome

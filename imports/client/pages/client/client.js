@@ -1,4 +1,13 @@
 import './client.html';
+import './client.scss';
+
+Template.client.onRendered(()=> {
+    $('.fixed-action-btn').floatingActionButton({
+      // hoverEnabled: false
+    });
+    $('.collapsible').collapsible();
+    $('.modal').modal();
+});
 
 Template.client.helpers({
   clientData() {
@@ -7,6 +16,10 @@ Template.client.helpers({
 
   valves() {
     return ClientsValves.find({owner: FlowRouter.getParam('id')})
+  },
+
+  sites() {
+    return Sites.find({owner: FlowRouter.getParam('id')})
   },
 
   getValve(valve) {
@@ -19,5 +32,25 @@ Template.client.helpers({
 
   valveCertificates(valve) {
     return Certificates.find({valve: valve}).count();
+  }
+});
+
+Template.client.events({
+  'submit form'(e) {
+    Meteor.call('insert.site', {
+      owner: FlowRouter.getParam('id'),
+      name: e.target.name.value,
+      createdAt: new Date().valueOf()
+    });
+    Bert.alert({
+      message: 'Site registered',
+      type: 'success',
+      style: 'fixed-bottom',
+      icon: 'fa fa-check'
+    });
+  },
+
+  'click .tdValve'(e) {
+    FlowRouter.go(`/valve/certificates/${this._id}`)
   }
 });

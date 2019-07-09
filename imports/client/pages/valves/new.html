@@ -1,0 +1,75 @@
+<template name="newValve">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h4>New Valve</h4>
+      </div>
+    </div>
+    <div class="row">
+      <form id="newValveForm">
+        <div class="input-field col s12">
+          <select id="manufacturer">
+            <option value="" disabled selected>Choose...</option>
+            {{#each brands}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+          <label>Manufacturer</label>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="model" type="text" class="validate">
+            <label for="model">Model</label>
+          </div>
+          <div class="input-field col s12 l4">
+            <input id="orifice" type="text" class="validate">
+            <label for="orifice">Orifice</label>
+          </div>
+          <div class="input-field col s12 l4">
+            <input id="fluid" type="text" class="validate">
+            <label for="fluid">Fluid</label>
+          </div>
+          <div class="input-field col s12 l4">
+            <input id="dn" type="text" class="validate">
+            <label for="dn">DN</label>
+          </div>
+          <div class="input-field col s12 l4">
+            <p>
+              <label>
+                <input name="group1" type="radio" checked />
+                <span>Safety</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="group1" type="radio" />
+                <span>Butterfly</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input class="with-gap" name="group1" type="radio"  />
+                <span>Ball</span>
+              </label>
+            </p>
+
+          </div>
+          <div class="input-field col s12 l4">
+            <input id="class" type="text" class="validate">
+            <label for="class">Class</label>
+          </div>
+          <div class="input-field col s12 l4">
+            <input id="joint" type="text" class="validate">
+            <label for="joint">Joint</label>
+          </div>
+
+        </div>
+        <div class="">
+          <button class="btn waves-effect waves-light blue" type="submit" name="action">Save
+            <i class="material-icons right">save</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

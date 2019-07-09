@@ -8,9 +8,9 @@
     <div class="row">
       {{#each clients}}
       <div class="col s12 m6">
-        <div class="card blue client-card" id="client">
-          <div class="card-content white-text">
-            <span class="card-title">{{profile.name}}</span>
+        <div class="card client-card indigo darken-4" id="client">
+          <div class="card-content white-text center">
+            <span class="card-title">{{username}}</span>
             </div>
           </div>
         </div>
@@ -19,4 +19,8 @@
       </div>
 
     </div>
+
+    <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 btn-edge" href="/admin/clients/new">
+      <i class="material-icons">add</i>
+    </a>
   </template>

@@ -10,11 +10,13 @@
   "dependencies": {
     "@babel/runtime": "^7.3.4",
     "@google-cloud/storage": "^3.0.2",
+    "animate.css": "^3.7.2",
     "bcrypt": "^3.0.6",
     "fast-crc32c": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
     "meteor-node-stubs": "^0.4.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sweetalert2": "^8.13.1"
   },
   "meteor": {
     "mainModule": {

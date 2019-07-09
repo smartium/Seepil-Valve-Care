@@ -3,6 +3,8 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import Documents from '../imports/both/lib/documents';
 import './imports';
 
+import '../node_modules/animate.css/animate.min.css';
+
 subCert = Meteor.subscribe('certificates');
 subValv = Meteor.subscribe('valves');
 subBran = Meteor.subscribe('valvesBrands');
@@ -20,20 +22,8 @@ Meteor.startup(()=>{
 
   Tracker.autorun(() => {
     if (Meteor.user()) {
-      console.log('Logged IN\n');
-      if (Meteor.user().profile.type == 'admin') {
-        FlowRouter.go('/admin');
-      }
-      else if (Meteor.user().profile.type == 'user') {
-        FlowRouter.go('/');
-      }
     }
     else {
-      FlowRouter.go('/login');
-      console.log('Logged OUT\n');
-      console.log(Meteor.user());
-      console.log('--------');
-      console.log(Meteor.userId());
     }
   });
 });
