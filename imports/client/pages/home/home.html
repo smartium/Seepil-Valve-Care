@@ -30,7 +30,20 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test2" class="active indigo-text text-darken-4">ALL</a></li>
+        {{#each sites}}
+        <li class="tab col s3"><a href="#{{_id}}" class="indigo-text text-darken-4">{{name}}</a></li>
+        {{/each}}
 
+      </ul>
+    </div>
+    {{#each sites}}
+    <!-- <div id="{{_id}}" class="col s12">{{name}}</div> -->
+    {{/each}}
+  </div>
 
   <div class="">
     <div class="row">
@@ -42,7 +55,8 @@
             <span class="card-title activator grey-text text-darken-4">{{tag}}<i class="material-icons right">more_vert</i></span>
             <h6>Serial: {{serial}}</h6>
             <h6>Site: {{getValveSite site}}</h6>
-            <p><a href="/valve/certificates/{{_id}}" id="viewCertificates">View certificates</a></p>
+            <span class="new badge indigo darken-4" data-badge-caption="certificates">N</span>
+            <p class=""><small><a href="/valve/certificates/{{_id}}" id="viewCertificates">VIEW CERTIFICATES</a></small></p>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">{{tag}}<i class="material-icons right">close</i></span>

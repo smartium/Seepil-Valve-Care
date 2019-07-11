@@ -5,7 +5,14 @@ Template.home.onRendered(()=> {
     if (!Meteor.user()) {
       FlowRouter.go('/login');
     }
-  },2000);
+    else {
+      if (Meteor.user().profile.type == 'admin') {
+        FlowRouter.go('/admin/clients');
+      }
+    }
+  }, 2000);
+
+  $('.tabs').tabs();
 });
 
 Template.home.helpers({
@@ -28,10 +35,14 @@ Template.searchBox.helpers({
 
   searchAttr() {
     return {
-      class: 'blue-text',
+      class: 'indigo-text text-darken-4 search-input',
       type: 'search',
       placeholder: 'Find valve by TAG or SERIAL',
       id: 'findValve'
     }
+  },
+
+  sites() {
+    return Sites.find({client: Meteor.user().profile.client});
   }
 });

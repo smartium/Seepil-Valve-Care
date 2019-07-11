@@ -47,5 +47,20 @@ Meteor.methods({
 
   'insert.client.valve'(valve) {
     ClientsValves.insert(valve);
+  },
+
+  'deactive.client.valve'(_valve) {
+    let valve = ClientsValves.findOne(_valve);
+    console.log(valve);
+    ClientsValves.update(
+      {_id: valve._id},
+      {
+        $set: {
+          active: false
+        }
+      }
+    );
+    valve = ClientsValves.findOne(_valve);
+    console.log(valve);
   }
 });

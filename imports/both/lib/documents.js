@@ -20,7 +20,7 @@ if (Meteor.isDevelopment) {
   storagePath = 'assets/app/uploads/uploadedFiles';
 }
 else {
-  storagePath = '/var/www/valvecare/bundle/programs/server';
+  storagePath = '/var/www/app/bundle/programs/server';
 }
 
 Documents = new FilesCollection({

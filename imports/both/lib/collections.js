@@ -11,12 +11,12 @@ ValvesIndex = new Index({
   collection: Valves,
   fields: ['model', 'manufacturer'],
   engine: new MinimongoEngine(),
-  defaultSearchOptions: { limit: 20 }
+  defaultSearchOptions: { limit: 6 }
 })
 
 ClientsValvesIndex = new Index({
   collection: ClientsValves,
   fields: ['tag', 'serial'],
   engine: new MinimongoEngine(),
-  defaultSearchOptions: { limit: 10 }
+  defaultSearchOptions: { limit: -1 }
 })

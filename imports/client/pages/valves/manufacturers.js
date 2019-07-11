@@ -2,6 +2,12 @@ import './manufacturers.html';
 
 Template.manufacturers.onRendered(()=> {
   $('.modal').modal();
+  // $('.tap-target').tapTarget();
+  // $('.tap-target').tapTarget('open');
+  // Meteor.setTimeout(()=> {
+  //   $('.tap-target').tapTarget('close');
+  //   $('.tap-target').tapTarget('destroy');
+  // }, 3000);
 });
 
 Template.manufacturers.helpers({

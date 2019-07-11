@@ -23,6 +23,7 @@ Meteor.publish('valves', ()=> {
 });
 
 Meteor.publish('clientsValves', ()=> {
+  // return ClientsValves.find({active: true});
   return ClientsValves.find();
 });
 

@@ -5,13 +5,7 @@ import './imports';
 
 import '../node_modules/animate.css/animate.min.css';
 
-subCert = Meteor.subscribe('certificates');
-subValv = Meteor.subscribe('valves');
-subBran = Meteor.subscribe('valvesBrands');
-subSite = Meteor.subscribe('sites');
-subClVa = Meteor.subscribe('clientsValves');
-subClie = Meteor.subscribe('clients');
-subDocu = Meteor.subscribe('documents');
+
 
 newUpload = new ReactiveVar();
 
@@ -22,6 +16,13 @@ Meteor.startup(()=>{
 
   Tracker.autorun(() => {
     if (Meteor.user()) {
+      subCert = Meteor.subscribe('certificates');
+      subValv = Meteor.subscribe('valves');
+      subBran = Meteor.subscribe('valvesBrands');
+      subSite = Meteor.subscribe('sites');
+      subClVa = Meteor.subscribe('clientsValves');
+      subClie = Meteor.subscribe('clients');
+      subDocu = Meteor.subscribe('documents');
     }
     else {
     }

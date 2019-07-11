@@ -30,7 +30,8 @@ Template.newClientValve.events({
       certificateNumber: [],
       certificateDate: [],
       certificateFile: [],
-      createdAt: new Date().valueOf()
+      createdAt: new Date().valueOf(),
+      active: true
     };
     Meteor.call('insert.client.valve', valve)
   }

@@ -19,7 +19,7 @@ if (Meteor.isServer) {
   else {
     gcs = new Storage({
       projectId: 'valve-care-platform', // <-- Replace this with your project ID
-      keyFilename: `/home/moraes/gcloudstoragekey.json`  // <-- Replace this with the path to your key.json
+      keyFilename: `/home/appuser/gcloudstoragekey.json`  // <-- Replace this with the path to your key.json
     });
   }
   bucket = gcs.bucket('valvecare-uploads'); // <-- Replace this with your bucket name

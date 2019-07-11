@@ -1,21 +1,25 @@
 <template name="login">
   <div class="container">
     <div class="row">
-        {{> loginButtons}}
+      <!-- {{> loginButtons}} -->
       <form class="col s12" id="loginForm">
         <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">email</i>
-            <input id="email" type="email" class="validate" value="2@2.2">
+          <div class="input-field col s6 offset-s3">
+            <i class="material-icons prefix indigo-text text-darken-4">email</i>
+            <!-- <input id="email" type="email" class="validate" value="2@2.2"> -->
+            <input id="email" type="email" class="validate">
             <label for="email">Login (Email)</label>
           </div>
-          <div class="input-field col s6">
-            <i class="material-icons prefix">fiber_pin</i>
-            <input id="password" type="password" class="validate" value="121212">
+          </div>
+          <div class="row">
+          <div class="input-field col s6 offset-s3">
+            <i class="material-icons prefix indigo-text text-darken-4">fiber_pin</i>
+            <!-- <input id="password" type="password" class="validate" value="121212"> -->
+            <input id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
             <input id="username" type="text" class="validate" value="luizinho">
@@ -26,9 +30,17 @@
             <input id="usertype" type="text" class="validate" value="user">
             <label for="usertype">Type</label>
           </div>
+        </div> -->
+        <div class="row">
+          <div class="col s6 offset-s3 center-align progress-bar">
+            <h5>Validating user...</h5>
+            <div class="progress">
+              <div class="indeterminate blue"></div>
+            </div>
+          </div>
         </div>
         <div class="row">
-          <div class="col s3">
+          <div class="col s6 offset-s3 center-align">
             <button id="signin" class="btn waves-effect waves-light blue" type="submit" name="action">Login
               <i class="material-icons right">send</i>
             </button>
@@ -36,13 +48,16 @@
         </div>
       </form>
 
-      <div class="col s3">
+      <!-- <div class="col s3">
         <button id="signup" class="btn waves-effect waves-light red" type="submit" name="action">Signup
           <i class="material-icons right">person_add</i>
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
-
-
+  <!-- <ul>
+    {{#each users}}
+    <li>{{username}} - {{#each emails}} {{address}} {{/each}}</li>
+    {{/each}}
+  </ul> -->
 </template>

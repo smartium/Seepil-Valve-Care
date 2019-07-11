@@ -1,6 +1,8 @@
 import './client.html';
 import './client.scss';
 
+filterSite = new ReactiveVar(null);
+
 Template.client.onRendered(()=> {
     $('.fixed-action-btn').floatingActionButton({
       // hoverEnabled: false
@@ -19,7 +21,7 @@ Template.client.helpers({
   },
 
   sites() {
-    return Sites.find({owner: FlowRouter.getParam('id')})
+    return Sites.find({client: FlowRouter.getParam('id')})
   },
 
   getValve(valve) {
@@ -32,13 +34,17 @@ Template.client.helpers({
 
   valveCertificates(valve) {
     return Certificates.find({valve: valve}).count();
+  },
+
+  users() {
+    return Meteor.users.find({'profile.client': FlowRouter.getParam('id')})
   }
 });
 
 Template.client.events({
   'submit form'(e) {
     Meteor.call('insert.site', {
-      owner: FlowRouter.getParam('id'),
+      client: FlowRouter.getParam('id'),
       name: e.target.name.value,
       createdAt: new Date().valueOf()
     });
@@ -52,5 +58,48 @@ Template.client.events({
 
   'click .tdValve'(e) {
     FlowRouter.go(`/valve/certificates/${this._id}`)
+  },
+
+  'click #deactiveValve'(e) {
+    e.preventDefault();
+    Meteor.call('deactive.client.valve', this._id);
+  }
+});
+
+Template.admSearchBox.onRendered(()=> {
+  $('#findValve').focus();
+});
+
+Template.admSearchBox.helpers({
+  // valvesIndex: () => ValvesIndex,
+  clientValvesIndex: () => ClientsValvesIndex,
+
+  valveCertificates(valve) {
+    return Certificates.find({valve: valve}).count();
+  },
+
+  getValveSite(site) {
+    return Sites.findOne({_id: site}).name;
+  },
+
+  getSite(site) {
+    return Sites.findOne({_id: site});
+  },
+
+  getValve(valve) {
+    return Valves.findOne({_id: valve});
+  },
+
+  searchAttr() {
+    return {
+      class: 'indigo-text text-darken-4 search-input',
+      type: 'search',
+      placeholder: 'Find valve by TAG or SERIAL',
+      id: 'findValve'
+    }
+  },
+
+  sites() {
+    return Sites.find({client: Meteor.user().profile.client});
   }
 });

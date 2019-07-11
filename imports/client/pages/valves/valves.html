@@ -29,6 +29,11 @@
       <!-- {{> EasySearch.Pagination index=clientValvesIndex maxPages=20 attributes=pagAttr}} -->
     </div>
   </div>
+  <div class="row">
+    <div class="col s12 center-align">
+      {{> EasySearch.Pagination index=valvesIndex maxPages=10 attributes=pagAttr}}
+    </div>
+  </div>
 
 
 
@@ -50,15 +55,33 @@
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">{{model}}<i class="material-icons right">close</i></span>
             <!-- <a class="waves-effect waves-light btn green"><i class="material-icons right">edit</i>edit</a> -->
-            <a class="waves-effect waves-light btn red" id="remove"><i class="material-icons right">delete</i>remove</a>
+            <a class="waves-effect waves-light btn red modal-trigger" id="remove" href="#"><i class="material-icons right">delete</i>remove</a>
           </div>
         </div>
       </div>
       {{/EasySearch.Each}}
+      <!-- <div class="row">
+        <div class="col s12 center-align">
+          {{> EasySearch.Pagination index=valvesIndex maxPages=10 attributes=pagAttr}}
+        </div>
+      </div> -->
     </div>
   </div>
 
   <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 btn-edge" href="/admin/valve/new">
     <i class="material-icons">add</i>
   </a>
+
+  <!-- Modal Structure -->
+  <div id="remove-modal" class="modal">
+    <div class="modal-content">
+      <h4>Remove confirmation</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a href="#!" class="modal-close waves-effect waves-blue btn red">Confirm</a>
+    </div>
+  </div>
+
 </template>

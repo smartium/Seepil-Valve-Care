@@ -20,6 +20,10 @@ Template.header.onRendered(()=> {
 });
 
 Template.header.helpers({
+  user() {
+    return Meteor.user();
+  },
+
   logged() {
     // return Meteor.userId();
     return userDrop.get();
@@ -32,7 +36,7 @@ Template.header.helpers({
   },
 
   sites() {
-    return Sites.find();
+    return Sites.find({client: Meteor.user().profile.client});
   },
 
   adminMenu() {
@@ -49,9 +53,15 @@ Template.header.helpers({
 });
 
 Template.header.events({
-  'click #logout'(e) {
+  'click .logout'(e) {
     e.preventDefault();
     userDrop.set(false);
     Meteor.logout();
+    FlowRouter.go('/login');
+  },
+
+  'click .filterSite'(e) {
+    e.preventDefault();
+    filterSite.set(this._id);
   }
 });

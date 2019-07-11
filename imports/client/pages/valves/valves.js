@@ -1,6 +1,11 @@
 import './valves.html';
 
 Template.valves.helpers({
+  pagAttr() {
+    return {
+      class: 'red-text'
+    };
+  },
 });
 
 Template.valvesSearchBox.onRendered(()=> {
@@ -15,11 +20,11 @@ Template.valvesSearchBox.helpers({
 
   searchAttr() {
     return {
-      class: 'blue-text',
+      class: 'indigo-text text-darken-4 search-input',
       type: 'search',
       placeholder: 'Find valve by MODEL or MANUFACTURER',
-      id: 'findValve'
-    }
+      id: 'findValve',
+    };
   },
 
   brands() {
@@ -30,5 +35,6 @@ Template.valvesSearchBox.helpers({
 Template.valvesSearchBox.events({
   'click #remove'(e) {
     Meteor.call('remove.valve', this._id);
+    // $('#remove-confirmation').modal('open');
   }
 });
