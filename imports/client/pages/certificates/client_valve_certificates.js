@@ -1,6 +1,9 @@
 import Documents from '../../../both/lib/documents';
 import './client_valve_certificates.html';
 
+formMode = null;
+editCertificateID = new ReactiveVar('fkt9pQqHhWNX5b6Bh');
+
 Template.clientValveCertificates.onRendered(()=>{
   console.log(FlowRouter.getParam('id'));
   $('.modal').modal();
@@ -10,16 +13,24 @@ Template.clientValveCertificates.onRendered(()=>{
 });
 
 Template.clientValveCertificates.helpers({
+  isAdmin() {
+    return Meteor.user().profile.type == 'admin' ? true : false;
+  },
+
   valve() {
     return ClientsValves.findOne({_id: FlowRouter.getParam('id')});
   },
 
   certificates() {
-    return Certificates.find({valve: FlowRouter.getParam('id')});
+    return Certificates.find({valve: FlowRouter.getParam('id'), active: {$ne: false}});
   },
 
   getDocument(document) {
     return Documents.findOne({_id: document}).versions.original.meta.pipePath;
+  },
+
+  certificate() {
+    return Certificates.find({_id: 'fkt9pQqHhWNX5b6Bh'}).fetch[0];
   }
 });
 
@@ -40,5 +51,17 @@ Template.clientValveCertificates.events({
       e.target.certName.value,
       e.target.certDate.value,
     )
+  },
+
+  'click #editCert'(e) {
+    e.preventDefault();
+    // editCertificateID.set(this._id);
+    // console.log(editCertificateID.get());
+    $('#editCertModal').modal('open');
+  },
+
+  'click #deactiveCert'(e) {
+    e.preventDefault();
+    Meteor.call('deactive.certificate', this._id);
   }
 });

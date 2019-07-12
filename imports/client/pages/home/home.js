@@ -44,5 +44,9 @@ Template.searchBox.helpers({
 
   sites() {
     return Sites.find({client: Meteor.user().profile.client});
+  },
+
+  certificatesCount(certificate) {
+    return Certificates.find({valve: certificate}).count();
   }
 });

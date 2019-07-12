@@ -15,7 +15,12 @@
             <span class="card-title activator grey-text text-darken-4">{{number}}</span>
             <!-- <span class="card-title">{{number}}</span> -->
             <p>
-              Date: {{date}}<i class="material-icons right red-text">delete</i><i class="material-icons right green-text">edit</i>
+              Date: {{date}}
+              {{#if isAdmin}}
+              <!-- <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i><a href="#editCertModal" class=" modal-trigger"><i class="material-icons right green-text icon-pointer" id="editCert">edit</i></a> -->
+              <!-- <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i><a href="#" class="modal-trigger" id="editCert" name="{{_id}}"><i class="material-icons right green-text icon-pointer">edit</i></a> -->
+              <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i>
+              {{/if}}
             </p>
           </div>
           <div class="card-reveal">
@@ -34,15 +39,19 @@
   </div>
 
   <!-- Modal Trigger -->
+  {{#if isAdmin}}
   <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 modal-trigger btn-edge" href="#modal1">
     <i class="material-icons">add</i>
   </a>
+  {{/if}}
 
   <!-- Modal Structure -->
+
+  <!-- ADD -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
       <h4>New certificate</h4>
-      <form id="new-client-valve">
+      <form id="new-client-valve-certificate">
         <div class="row">
           <div class="col s6">
         <input type="text" class="form-control" id="certName" placeholder="Number and/or Description">
@@ -51,8 +60,6 @@
         <input class="datepicker" type="text" id="certDate" placeholder="Date">
           </div>
         </div>
-
-
         {{> uploadForm}}
         <div class="row right-align">
           <button type="submit" class="btn btn-primary mb-0 indigo darken-4">Add</button>
@@ -60,4 +67,26 @@
       </form>
     </div>
   </div>
+
+  <!-- EDIT -->
+  <!-- {{#with certificate}} -->
+  <div id="editCertModal" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Edit certificate {{number}}</h4>
+      <form id="edit-client-valve-certificate">
+        <div class="row">
+          <div class="col s6">
+        <input type="text" class="form-control" id="certName" placeholder="Number and/or Description">
+          </div>
+          <div class="col s6">
+        <input class="datepicker" type="text" id="certDate" placeholder="Date">
+          </div>
+        </div>
+        <div class="row right-align">
+          <button type="submit" class="btn btn-primary mb-0 indigo darken-4">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- {{/with}} -->
 </template>

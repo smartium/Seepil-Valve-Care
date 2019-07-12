@@ -56,6 +56,7 @@ Template.header.events({
   'click .logout'(e) {
     e.preventDefault();
     userDrop.set(false);
+    // isAdmin.set(false);
     Meteor.logout();
     FlowRouter.go('/login');
   },

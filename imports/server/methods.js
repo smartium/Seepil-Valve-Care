@@ -34,11 +34,24 @@ Meteor.methods({
       document: _document,
       number: _number,
       date: _date,
+      active: true,
       createdAt: {
         epoch: new Date().valueOf(),
         date: new Date()
       }
     });
+  },
+
+  'deactive.certificate'(_certificate) {
+    let certificate = Certificates.findOne(_certificate);
+    Certificates.update(
+      {_id: certificate._id},
+      {
+        $set: {
+          active: false
+        }
+      }
+    );
   },
 
   'insert.site'(site) {
@@ -51,7 +64,6 @@ Meteor.methods({
 
   'deactive.client.valve'(_valve) {
     let valve = ClientsValves.findOne(_valve);
-    console.log(valve);
     ClientsValves.update(
       {_id: valve._id},
       {
@@ -60,7 +72,5 @@ Meteor.methods({
         }
       }
     );
-    valve = ClientsValves.findOne(_valve);
-    console.log(valve);
   }
 });

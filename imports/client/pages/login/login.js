@@ -4,7 +4,19 @@ import Swal from 'sweetalert2';
 
 import './login.html';
 
+Tracker.autorun(()=> {
+  // if (isAdmin.get()) {
+  //   Template.registerHelper('adminCheck', ()=> {
+  //     return isAdmin.get();
+  //   });
+  // }
+});
+
 Template.login.helpers({
+  development() {
+    return Meteor.isDevelopment;
+  },
+
   users() {
     return Meteor.users.find();
   }
@@ -28,9 +40,11 @@ Template.login.events({
       }
       else {
         if (Meteor.user().roles.group[0] == 'admin') {
-        FlowRouter.go('/admin/clients');
+          // isAdmin.set(true);
+          FlowRouter.go('/admin/clients');
         }
         else {
+          // isAdmin.set(false);
           FlowRouter.go('/');
         }
       }

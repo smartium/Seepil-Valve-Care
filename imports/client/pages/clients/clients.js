@@ -1,5 +1,8 @@
 import './clients.html';
 
+Template.clients.onRendered(()=> {
+});
+
 Template.clients.helpers({
   clients() {
     return Meteor.users.find({'profile.type': 'client'});

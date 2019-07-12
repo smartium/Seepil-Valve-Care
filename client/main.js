@@ -1,13 +1,13 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import Documents from '../imports/both/lib/documents';
-import './imports';
 
 import '../node_modules/animate.css/animate.min.css';
 
-
-
 newUpload = new ReactiveVar();
+// isAdmin = new ReactiveVar();
+
+import './imports';
 
 import './main.html';
 

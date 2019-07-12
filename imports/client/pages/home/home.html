@@ -55,7 +55,7 @@
             <span class="card-title activator grey-text text-darken-4">{{tag}}<i class="material-icons right">more_vert</i></span>
             <h6>Serial: {{serial}}</h6>
             <h6>Site: {{getValveSite site}}</h6>
-            <span class="new badge indigo darken-4" data-badge-caption="certificates">N</span>
+            <span class="new badge indigo darken-4" data-badge-caption="certificates">{{certificatesCount _id}}</span>
             <p class=""><small><a href="/valve/certificates/{{_id}}" id="viewCertificates">VIEW CERTIFICATES</a></small></p>
           </div>
           <div class="card-reveal">

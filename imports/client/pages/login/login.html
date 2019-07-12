@@ -6,20 +6,21 @@
         <div class="row">
           <div class="input-field col s6 offset-s3">
             <i class="material-icons prefix indigo-text text-darken-4">email</i>
-            <!-- <input id="email" type="email" class="validate" value="2@2.2"> -->
-            <input id="email" type="email" class="validate">
+            <input id="email" type="email" class="validate" value="{{#if development}}2@2.2{{/if}}">
+            <!-- <input id="email" type="email" class="validate"> -->
             <label for="email">Login (Email)</label>
           </div>
-          </div>
-          <div class="row">
+        </div>
+        <div class="row">
           <div class="input-field col s6 offset-s3">
             <i class="material-icons prefix indigo-text text-darken-4">fiber_pin</i>
-            <!-- <input id="password" type="password" class="validate" value="121212"> -->
-            <input id="password" type="password" class="validate">
+            <input id="password" type="password" class="validate" value="{{#if development}}121212{{/if}}">
+            <!-- <input id="password" type="password" class="validate"> -->
             <label for="password">Password</label>
           </div>
         </div>
-        <!-- <div class="row">
+        {{#if development}}
+        <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
             <input id="username" type="text" class="validate" value="luizinho">
@@ -30,7 +31,8 @@
             <input id="usertype" type="text" class="validate" value="user">
             <label for="usertype">Type</label>
           </div>
-        </div> -->
+        </div>
+        {{/if}}
         <div class="row">
           <div class="col s6 offset-s3 center-align progress-bar">
             <h5>Validating user...</h5>
@@ -48,16 +50,20 @@
         </div>
       </form>
 
-      <!-- <div class="col s3">
+      {{#if development}}
+      <div class="col s3">
         <button id="signup" class="btn waves-effect waves-light red" type="submit" name="action">Signup
           <i class="material-icons right">person_add</i>
         </button>
-      </div> -->
+      </div>
+      {{/if}}
     </div>
   </div>
-  <!-- <ul>
+  {{#if development}}
+  <ul>
     {{#each users}}
     <li>{{username}} - {{#each emails}} {{address}} {{/each}}</li>
     {{/each}}
-  </ul> -->
+  </ul>
+  {{/if}}
 </template>
