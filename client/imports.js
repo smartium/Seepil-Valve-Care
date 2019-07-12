@@ -3,6 +3,7 @@ import '../imports/client/lib/routes';
 import 'materialize-css/sass/materialize.scss';
 import 'materialize-css/dist/js/materialize.min';
 import '../imports/client/styles/main.scss';
+import '../imports/client/styles/tooltip.css';
 import '../imports/client/partials/header/header';
 import '../imports/client/partials/footer/footer.html';
 import '../imports/client/pages/admin/admin';

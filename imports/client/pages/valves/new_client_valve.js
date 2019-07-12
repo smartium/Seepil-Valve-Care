@@ -14,7 +14,7 @@ Template.newClientValve.helpers({
   },
 
   sites() {
-    return Sites.find({owner: FlowRouter.getParam('id')});
+    return Sites.find({client: FlowRouter.getParam('id')});
   }
 });
 

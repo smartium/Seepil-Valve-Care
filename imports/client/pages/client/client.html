@@ -13,13 +13,28 @@
           <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 btn-edge" href="/admin/clients/user/new/{{clientData._id}}">
             <i class="material-icons">add</i>
           </a>
-          <table>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Job Role</th>
+                <th>Email</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
             <tbody>
               {{#each users}}
               <tr>
-                <td>{{username}}</td>
-                <td><a href="#"><i class="material-icons">edit</i></a></td>
-                <td><a href="#"><i class="material-icons red-text">delete</i></a></td>
+                <td>{{profile.name}} {{profile.lastname}}</td>
+                <td>{{profile.jobRole}}</td>
+                <td>
+                  {{#each emails}}
+                  <a href="mailto:{{address}}">{{address}}</a>
+                  {{/each}}
+                </td>
+                <td>
+                  <a href="#"><i class="material-icons">edit</i></a><a href="#"><i class="material-icons red-text">delete</i></a>
+                </td>
               </tr>
               {{/each}}
             </tbody>
@@ -112,7 +127,7 @@
   <div class="">
     <div class="row">
 
-      <table>
+      <table class="responsive-table">
         <thead>
           <tr>
             <th>TAG</th>

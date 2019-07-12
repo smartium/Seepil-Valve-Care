@@ -4,7 +4,7 @@
       <div class="col s12">
         <br>
         <a href="/">Back to Home...</a>
-        <h4> <small>Valve</small> <span class="blue-text">{{valve.tag}}</span> <small>certificates</small></h4>
+        <h4> <small>Valve</small> <span class="indigo-text text-darken-4">{{valve.tag}}</span> <small>certificates</small></h4>
       </div>
     </div>
     <div class="row">
@@ -16,11 +16,6 @@
             <!-- <span class="card-title">{{number}}</span> -->
             <p>
               Date: {{date}}
-              {{#if isAdmin}}
-              <!-- <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i><a href="#editCertModal" class=" modal-trigger"><i class="material-icons right green-text icon-pointer" id="editCert">edit</i></a> -->
-              <!-- <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i><a href="#" class="modal-trigger" id="editCert" name="{{_id}}"><i class="material-icons right green-text icon-pointer">edit</i></a> -->
-              <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i>
-              {{/if}}
             </p>
           </div>
           <div class="card-reveal">
@@ -28,8 +23,15 @@
             <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
           <div class="card-action">
+            {{#if isAdmin}}
+            <i class="fas fa-trash right red-text icon-pointer" id="deactiveCert"></i>
+            <!-- <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i><a href="#editCertModal" class=" modal-trigger"><i class="material-icons right green-text icon-pointer" id="editCert">edit</i></a> -->
+            <!-- <i class="material-icons right red-text icon-pointer" id="deactiveCert">delete</i><a href="#" class="modal-trigger" id="editCert" name="{{_id}}"><i class="fas fa-edit right green-text icon-pointer"></i></a> -->
+
+            {{/if}}
+            <i class="fas fa-link right blue-text icon-pointer" id="shareCert" data-clipboard-text="https://storage.googleapis.com/valvecare-uploads/{{getDocument document}}"></i>
             <a href="https://storage.googleapis.com/valvecare-uploads/{{getDocument document}}" class="blue-text" target="_blank">
-              View Document
+              <i class="fas fa-file-pdf right"></i>
             </a>
           </div>
         </div>

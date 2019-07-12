@@ -10,6 +10,7 @@ Template.clientValveCertificates.onRendered(()=>{
   $('.datepicker').datepicker({
     format: 'mm/dd/yyyy'
   });
+  $('.tooltipped').tooltip();
 });
 
 Template.clientValveCertificates.helpers({
@@ -35,6 +36,11 @@ Template.clientValveCertificates.helpers({
 });
 
 Template.clientValveCertificates.events({
+  'click #shareCert'(e) {
+    new ClipboardJS('#shareCert');
+    Bert.alert( 'Document link was copied to clipboard', 'info', 'growl-top-right', 'fas fa-clipboard' );
+  },
+
   'submit form'(e) {
     e.preventDefault();
 

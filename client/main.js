@@ -4,6 +4,8 @@ import Documents from '../imports/both/lib/documents';
 
 import '../node_modules/animate.css/animate.min.css';
 
+ClipboardJS = require('clipboard');
+
 newUpload = new ReactiveVar();
 // isAdmin = new ReactiveVar();
 
