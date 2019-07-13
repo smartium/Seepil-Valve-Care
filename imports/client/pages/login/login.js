@@ -45,7 +45,7 @@ Template.login.events({
         }
         else {
           // isAdmin.set(false);
-          FlowRouter.go('/');
+          FlowRouter.go('/user');
         }
       }
     });

@@ -1,5 +1,12 @@
 FlowRouter.route( '/', {
   action: function() {
+    BlazeLayout.render( 'applicationLayout', { main: 'loader' } );
+  },
+  name: 'Loading'
+});
+
+FlowRouter.route( '/user', {
+  action: function() {
     BlazeLayout.render( 'applicationLayout', { main: 'home' } );
   },
   name: 'Home'

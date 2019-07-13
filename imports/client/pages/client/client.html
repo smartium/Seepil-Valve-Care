@@ -8,7 +8,11 @@
 
     <ul class="collapsible popout">
       <li>
-        <div class="collapsible-header"><i class="material-icons indigo-text text-darken-4">account_circle</i>Users</div>
+        <div class="collapsible-header">
+          <i class="material-icons indigo-text text-darken-4">account_circle</i>
+          Users
+          <span class="new badge indigo darken-4" data-badge-caption="users">{{users.count}}</span>
+        </div>
         <div class="collapsible-body">
           <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 btn-edge" href="/admin/clients/user/new/{{clientData._id}}">
             <i class="material-icons">add</i>
@@ -42,7 +46,11 @@
         </div>
       </li>
       <li>
-        <div class="collapsible-header"><i class="material-icons indigo-text text-darken-4">location_on</i>Sites</div>
+        <div class="collapsible-header">
+          <i class="material-icons indigo-text text-darken-4">location_on</i>
+          Sites
+          <span class="new badge indigo darken-4" data-badge-caption="sites">{{sites.count}}</span>
+        </div>
         <div class="collapsible-body">
           <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 btn-edge modal-trigger" href="#modal1">
             <i class="material-icons">add</i>
@@ -62,19 +70,34 @@
 
       </li>
       <li>
-        <div class="collapsible-header"><i class="material-icons indigo-text text-darken-4">settings</i>Valves</div>
+        <div class="collapsible-header">
+          <i class="material-icons indigo-text text-darken-4">settings</i>
+          Valves
+          <span class="new badge indigo darken-4" data-badge-caption="valves">{{valves.count}}</span>
+        </div>
         <div class="collapsible-body">
           <a class="btn-floating btn-large waves-effect waves-light indigo darken-4 btn-edge" href="/admin/clients/valves/new/{{clientData._id}}">
             <i class="material-icons">add</i>
           </a>
 
-          {{> admSearchBox}}
+          {{> admClientValvesSearchBox}}
 
         </div>
       </li>
       <li>
-        <div class="collapsible-header"><i class="material-icons indigo-text text-darken-4">insert_drive_file</i>Certificates</div>
-        <div class="collapsible-body"><span>Coming soon...</span></div>
+        <div class="collapsible-header">
+          <i class="material-icons indigo-text text-darken-4">insert_drive_file</i>
+          Certificates
+          <span class="new badge indigo darken-4" data-badge-caption="certificates">{{clientCertificates.count}}</span>
+        </div>
+        <div class="collapsible-body">
+          <ul>
+            {{#each clientCertificates}}
+            <li>{{_id}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
       </li>
     </ul>
 
@@ -110,7 +133,7 @@
 </div>
 </template>
 
-<template name="admSearchBox">
+<template name="admClientValvesSearchBox">
   <div class="row">
     <div class="col s8 offset-s2">
       <form>

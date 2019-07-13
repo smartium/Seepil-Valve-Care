@@ -6,6 +6,7 @@ import '../imports/client/styles/main.scss';
 import '../imports/client/styles/tooltip.css';
 import '../imports/client/partials/header/header';
 import '../imports/client/partials/footer/footer.html';
+import '../imports/client/pages/loader/loader';
 import '../imports/client/pages/admin/admin';
 import '../imports/client/pages/valves/valves';
 import '../imports/client/pages/valves/new';

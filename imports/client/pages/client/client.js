@@ -38,6 +38,10 @@ Template.client.helpers({
 
   users() {
     return Meteor.users.find({'profile.client': FlowRouter.getParam('id')})
+  },
+
+  clientCertificates() {
+    return Certificates.find({owner: FlowRouter.getParam('id')});
   }
 });
 
@@ -66,11 +70,11 @@ Template.client.events({
   }
 });
 
-Template.admSearchBox.onRendered(()=> {
+Template.admClientValvesSearchBox.onRendered(()=> {
   $('#findValve').focus();
 });
 
-Template.admSearchBox.helpers({
+Template.admClientValvesSearchBox.helpers({
   // valvesIndex: () => ValvesIndex,
   clientValvesIndex: () => ClientsValvesIndex,
 
