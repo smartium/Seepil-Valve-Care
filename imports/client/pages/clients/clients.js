@@ -5,7 +5,8 @@ Template.clients.onRendered(()=> {
 
 Template.clients.helpers({
   clients() {
-    return Meteor.users.find({'profile.type': 'client'});
+    // return Meteor.users.find({'profile.type': 'client'});
+    return GndUsers.find({'profile.type': 'client'});
   }
 });
 

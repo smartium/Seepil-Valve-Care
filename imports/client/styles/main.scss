@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .btn-edge {
   position: fixed;
   bottom: 20px;
@@ -25,4 +35,21 @@
 .fas {
   font-size: 1.35em;
   margin-top: 1px;
+}
+
+.blinking{
+  animation:blink 1s infinite;
+}
+@keyframes blink{
+  0%{opacity: 0;}
+  10%{opacity: .1;}
+  20%{opacity: .2;}
+  30%{opacity: .3;}
+  40%{opacity: .4;}
+  50%{opacity: .5;}
+  60%{opacity: .6;}
+  70%{opacity: .7;}
+  80%{opacity: .8;}
+  90%{opacity: .9;}
+  100%{opacity: 1;}
 }

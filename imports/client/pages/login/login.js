@@ -43,6 +43,11 @@ Template.login.events({
           // isAdmin.set(true);
           FlowRouter.go('/admin/clients');
         }
+        else if (Meteor.user().roles.group[0] == 'client') {
+          // isAdmin.set(true);
+          Meteor.logout();
+          FlowRouter.go('/login');
+        }
         else {
           // isAdmin.set(false);
           FlowRouter.go('/user');

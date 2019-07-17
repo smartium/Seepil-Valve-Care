@@ -13,35 +13,39 @@ Template.client.onRendered(()=> {
 
 Template.client.helpers({
   clientData() {
-    return Meteor.users.findOne({_id: FlowRouter.getParam('id')})
+    return GndUsers.findOne({_id: FlowRouter.getParam('id')})
   },
 
   valves() {
-    return ClientsValves.find({owner: FlowRouter.getParam('id')})
+    return GndClientsValves.find({owner: FlowRouter.getParam('id')})
   },
 
   sites() {
-    return Sites.find({client: FlowRouter.getParam('id')})
+    return GndSites.find({client: FlowRouter.getParam('id')})
   },
 
   getValve(valve) {
-    return Valves.findOne({_id: valve});
+    return GndValves.findOne({_id: valve});
   },
 
   getSite(site) {
-    return Sites.findOne({_id: site});
+    return GndSites.findOne({_id: site});
   },
 
   valveCertificates(valve) {
-    return Certificates.find({valve: valve}).count();
+    return GndCertificates.find({valve: valve, active: {$ne: false}}).count();
   },
 
   users() {
-    return Meteor.users.find({'profile.client': FlowRouter.getParam('id')})
+    return GndUsers.find({'profile.client': FlowRouter.getParam('id')})
   },
 
   clientCertificates() {
-    return Certificates.find({owner: FlowRouter.getParam('id')});
+    return GndCertificates.find({owner: FlowRouter.getParam('id'), active: {$ne: false}});
+  },
+
+  getCertificateValve(valve) {
+    return GndClientsValves.findOne({_id: valve})
   }
 });
 
@@ -79,19 +83,19 @@ Template.admClientValvesSearchBox.helpers({
   clientValvesIndex: () => ClientsValvesIndex,
 
   valveCertificates(valve) {
-    return Certificates.find({valve: valve}).count();
+    return GndCertificates.find({valve: valve}).count();
   },
 
   getValveSite(site) {
-    return Sites.findOne({_id: site}).name;
+    return GndSites.findOne({_id: site}).name;
   },
 
   getSite(site) {
-    return Sites.findOne({_id: site});
+    return GndSites.findOne({_id: site});
   },
 
   getValve(valve) {
-    return Valves.findOne({_id: valve});
+    return GndValves.findOne({_id: valve});
   },
 
   searchAttr() {
@@ -104,6 +108,6 @@ Template.admClientValvesSearchBox.helpers({
   },
 
   sites() {
-    return Sites.find({client: Meteor.user().profile.client});
+    return GndSites.find({client: Meteor.user().profile.client});
   }
 });

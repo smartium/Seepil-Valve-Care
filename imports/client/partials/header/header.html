@@ -30,6 +30,12 @@
           {{/each}}
           {{/if}} -->
 
+          {{#if serverStatus}}
+          <li><a href="" class="inactiveLink"><span class="new badge green" data-badge-caption="ONLINE"></span></a></li>
+          {{else}}
+          <li><a href="" class="inactiveLink"><span class="new badge red blinking" data-badge-caption="OFFLINE"></span></a></li>
+          {{/if}}
+
           <!-- {{#if logged}} -->
           <li><a class="user-dropdown" href="#!" data-target="dropdown"><i class="material-icons right">more_vert</i></a></li>
           <!-- {{/if}} -->

@@ -91,11 +91,38 @@
           <span class="new badge indigo darken-4" data-badge-caption="certificates">{{clientCertificates.count}}</span>
         </div>
         <div class="collapsible-body">
-          <ul>
-            {{#each clientCertificates}}
-            <li>{{_id}}</li>
-            {{/each}}
-          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th>Number</th>
+                <th>TAG</th>
+                <th>
+                  Serial
+                </th>
+                <!-- <th>
+                  &nbsp;
+                </th> -->
+              </tr>
+            </thead>
+            <tbody>
+              {{#each clientCertificates}}
+              <tr>
+                <td>
+                  {{number}}
+                </td>
+                {{#with getCertificateValve valve}}
+                <td>{{tag}}</td>
+                <td>
+                  {{serial}}
+                </td>
+                {{/with}}
+                <!-- <td>
+                  DOC
+                </td> -->
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
         </div>
 
       </li>

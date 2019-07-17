@@ -20,6 +20,10 @@ Template.header.onRendered(()=> {
 });
 
 Template.header.helpers({
+  serverStatus() {
+    return Meteor.status().connected;
+  },
+
   user() {
     return Meteor.user();
   },

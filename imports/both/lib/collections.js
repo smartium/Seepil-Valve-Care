@@ -20,3 +20,23 @@ ClientsValvesIndex = new Index({
   engine: new MinimongoEngine(),
   defaultSearchOptions: { limit: -1 }
 })
+
+if (Meteor.isClient) {
+  GndClientsValves = new Ground.Collection('groundClientsValves');
+  GndClientsValves.observeSource(ClientsValves.find());
+
+  GndCertificates = new Ground.Collection('groundCertificates');
+  GndCertificates.observeSource(Certificates.find());
+
+  GndSites = new Ground.Collection('groundSites');
+  GndSites.observeSource(Sites.find());
+
+  GndValves = new Ground.Collection('groundValves');
+  GndValves.observeSource(Valves.find());
+
+  GndValvesBrands = new Ground.Collection('groundValvesBrands');
+  GndValvesBrands.observeSource(ValvesBrands.find());
+
+  GndUsers = new Ground.Collection('groundUsers');
+  GndUsers.observeSource(Meteor.users.find());
+}
