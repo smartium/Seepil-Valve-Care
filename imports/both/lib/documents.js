@@ -1,6 +1,6 @@
 import { Meteor }          from 'meteor/meteor';
 import { FilesCollection } from 'meteor/ostrio:files';
-import './gcloud_storage';
+// import './gcloud_storage';
 
 // const Documents = new FilesCollection({
 //   debug: true,
