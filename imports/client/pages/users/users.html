@@ -1,3 +1,45 @@
 <template name="newClientUser">
-  new client user
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h4>{{client}} <small>New User</small></h4>
+      </div>
+    </div>
+    <div class="row">
+      <form id="newClientForm">
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="firstName" type="text" class="validate">
+            <label for="firstName">First Name</label>
+          </div>
+          <div class="input-field col s8">
+            <input id="lastName" type="text" class="validate">
+            <label for="lastName">Last Name</label>
+          </div>
+          <div class="input-field col s12 l6">
+            <input id="jobRole" type="text" class="validate">
+            <label for="jobRole">Role</label>
+          </div>
+          <div class="input-field col s12 l6">
+            <input id="phone" type="text" class="validate">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="input-field col s12 l6">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12 l6">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+
+        </div>
+        <div class="">
+          <button class="btn waves-effect waves-light blue" type="submit" name="action">Save
+            <i class="material-icons right">save</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>

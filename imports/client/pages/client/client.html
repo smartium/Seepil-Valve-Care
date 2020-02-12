@@ -29,7 +29,7 @@
             <tbody>
               {{#each users}}
               <tr>
-                <td>{{profile.name}} {{profile.lastname}}</td>
+                <td>{{username}} {{profile.lastname}}</td>
                 <td>{{profile.jobRole}}</td>
                 <td>
                   {{#each emails}}
@@ -161,7 +161,7 @@
 </template>
 
 <template name="admClientValvesSearchBox">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col s8 offset-s2">
       <form>
         <div class="input-field">
@@ -171,7 +171,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
   <!-- {{> EasySearch.Pagination index=clientValvesIndex maxPages=20 attributes=pagAttr}} -->
 
   <div class="">
@@ -188,11 +188,11 @@
           </tr>
         </thead>
         <tbody>
-          <!-- {{#each valves}} -->
-          {{#EasySearch.Each index=clientValvesIndex }}
+          {{#each valves}}
+          <!-- {{#EasySearch.Each index=clientValvesIndex }} -->
           <tr>
             <td>
-              {{tag}}
+              {{tag}} - {{owner}}
             </td>
             <td>
               {{serial}}
@@ -209,8 +209,8 @@
             <td><a href="#" id="deactiveValve"><i class="material-icons red-text">delete</i></a></td>
             <td class="tdValve"><span class="new badge indigo darken-4" data-badge-caption="certificates">{{valveCertificates _id}}</span></td>
           </tr>
-          <!-- {{/each}} -->
-          {{/EasySearch.Each}}
+          {{/each}}
+          <!-- {{/EasySearch.Each}} -->
         </tbody>
       </table>
     </div>

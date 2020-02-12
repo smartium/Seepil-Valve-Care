@@ -16,9 +16,9 @@ ValvesIndex = new Index({
 
 ClientsValvesIndex = new Index({
   collection: ClientsValves,
-  fields: ['tag', 'serial'],
+  fields: ['owner', 'tag', 'serial'],
   engine: new MinimongoEngine(),
-  defaultSearchOptions: { limit: -1 }
+  //defaultSearchOptions: { limit: -1 }
 })
 
 if (Meteor.isClient) {

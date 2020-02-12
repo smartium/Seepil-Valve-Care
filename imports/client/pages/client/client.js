@@ -82,6 +82,10 @@ Template.admClientValvesSearchBox.helpers({
   // valvesIndex: () => ValvesIndex,
   clientValvesIndex: () => ClientsValvesIndex,
 
+  valves() {
+    return GndClientsValves.find({owner: FlowRouter.getParam('id')})
+  },
+
   valveCertificates(valve) {
     return GndCertificates.find({valve: valve}).count();
   },

@@ -21,7 +21,7 @@ Template.newClient.events({
       url: e.target.url.value,
     };
     Bert.alert({
-      message: 'Valve registered',
+      message: 'Client registered',
       type: 'success',
       style: 'fixed-bottom',
       icon: 'fa fa-check'

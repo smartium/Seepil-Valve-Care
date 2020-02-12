@@ -9,7 +9,11 @@ Meteor.methods({
       password: user.password,
       username: user.username,
       profile: {
-        type: user.type
+        type: user.type,
+        lastname: user.lasName,
+        jobRole: user.jobRole,
+        sites: user.sites,
+        client: user.client
       }
     });
     Roles.addUsersToRoles(newUser, [user.type], 'group');
